@@ -423,6 +423,18 @@
         }
       },
 
+      controls: {
+        get: function() {
+          return impl.controls;
+        },
+        set: function( aValue ) {
+          if ( playerReady ) {
+            impl.controls = self._util.isAttributeSet( aValue );
+            player.setControls(aValue);
+          }
+        }
+      },
+
       width: {
         get: function() {
           return self.parentNode.offsetWidth;
